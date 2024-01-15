@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def combos(request):
+    return render(request, "combos.html", {})
