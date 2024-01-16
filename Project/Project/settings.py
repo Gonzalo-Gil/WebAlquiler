@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Alquiler',
     'django_bootstrap_icons',
+    'Contacto',
 ]
 
 MIDDLEWARE = [

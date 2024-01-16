@@ -6,4 +6,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="index"),
     path('combos/', include("Alquiler.urls")),
+    path('contacto/', include("Contacto.urls")),
 ]
