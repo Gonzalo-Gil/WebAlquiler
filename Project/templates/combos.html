@@ -6,5 +6,74 @@
 {% endblock title %}
 
 {% block content %}
-    <h1>Combos disponibles</h1>
+    <div class="album py-5 bg-body-tertiary">
+        <h1 style="text-align: center;">Todos los combos disponibles</h1>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {% for combo in combos %}
+                    <div class="col">
+                        <div class="card shadow-sm h-100">
+                            <img src="{% static 'media/consolaPotenciada.jpg' %}" class="img-card" alt="...">
+                            <div class="card-body">
+                                <h4>{{ combo.name }}</h4>                                
+                                <p class="card-text">({{combo.description}})</p>
+                                <h6 class="card-text">Este combo incluye:</h6>
+                                {% for producto in combo.productos.all %}
+                                    <p>{{producto.name}}</p>
+                                {% endfor %}                                
+                            </div>
+                            <div class="card-footer text-body-secondary">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button type="button" class="btn btn-primary">Más información</button>
+                                    <h4 class="price-tag">{{ combo.price }} ARS</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                {% for combo in combos %}
+                    <div class="col">
+                        <div class="card shadow-sm h-100">
+                            <img src="{% static 'media/baflesTripode.jpg' %}" class="img-card" alt="...">                            
+                            <div class="card-body">
+                                <h4>{{ combo.name }}</h4>  
+                                <p class="card-text">({{combo.description}})</p>                              
+                                <h6 class="card-text">Este combo incluye:</h6>
+                                {% for producto in combo.productos.all %}
+                                    <p>{{producto.name}}</p>
+                                {% endfor %}                                
+                            </div>
+                            <div class="card-footer text-body-secondary">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button type="button" class="btn btn-primary">Más información</button>
+                                    <h4 class="price-tag">{{ combo.price }} ARS</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                {% for combo in combos %}
+                    <div class="col">
+                        <div class="card shadow-sm h-100">
+                            <img src="{% static 'media/bafles.jpeg' %}" class="img-card" alt="...">
+                            <div class="card-body">
+                                <h4>{{ combo.name }}</h4>    
+                                <p class="card-text">({{combo.description}})</p>                            
+                                <h6 class="card-text">Este combo incluye:</h6>
+                                {% for producto in combo.productos.all %}
+                                    <p>{{producto.name}}</p>
+                                {% endfor %}
+                            </div>
+                            <div class="card-footer text-body-secondary">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button type="button" class="btn btn-primary">Más información</button>
+                                    <h4 class="price-tag">{{ combo.price }} ARS</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 {% endblock content %}
